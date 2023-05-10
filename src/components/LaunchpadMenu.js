@@ -23,6 +23,13 @@ export default function LaunchpadMenu() {
             <h1>Coming soon...</h1>
           </div>
         </div>
+        <div className="flex flex-col gap-2">
+          <h1 className="font-bold">MODULES</h1>
+          <div className="pl-4 text-2xl">
+            <h1>Community Scam</h1>
+            <h1>Coming soon...</h1>
+          </div>
+        </div>
       </div>
     </div>
   );
