@@ -19,9 +19,13 @@ export default function ImageLink({
       target={blank ? "_blank" : "_self"}
       onMouseEnter={() => setFill(fillOnHover)}
       onMouseLeave={() => setFill(baseColor)}
-      className={`${className} ${scale} w-full h-full transition-all duration-150 ease-in`}
+      className={`${
+        className ? className : ""
+      } ${scale} w-min h-full transition-all duration-150 ease-in`}
     >
-      {newElement}
+      <div className="w-8 2xl:w-24 xl:w-20 lg:w-16 sm:w-14 xs:w-10 transition-all duration-150 ease-in">
+        {newElement}
+      </div>
     </Link>
   );
 }

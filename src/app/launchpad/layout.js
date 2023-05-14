@@ -1,5 +1,4 @@
-import Footer from "@/components/Footer";
-import LaunchpadMenu from "@/components/LaunchpadMenu";
+import { LaunchpadMenu } from "@/components/Menus";
 
 export default function RootLayout({ children }) {
   return (
@@ -8,7 +7,6 @@ export default function RootLayout({ children }) {
         <LaunchpadMenu />
         {children}
       </div>
-      <Footer />
     </div>
   );
 }
