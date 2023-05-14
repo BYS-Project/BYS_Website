@@ -1,5 +1,6 @@
 "use client";
 
+import { translateSrc } from "@/commonFrontend";
 import ImageLink from "@/components/links/ImageLink";
 import DiscordLogo from "@/components/logos/DiscordLogo";
 import LinkedInLogo from "@/components/logos/LinkedInLogo";
@@ -92,31 +93,31 @@ export default function Home() {
                 name="Enrico Pasetto"
                 role="CTO/CDO"
                 description="Lorem ipsum and some other text"
-                imageLink="/employees/enricopasetto.jpg"
+                imageLink={translateSrc("/employees/enricopasetto.jpg")}
               />
               <EmployeePic
                 name="Enrico Pasetto"
                 role="CTO/CDO"
                 description="Lorem ipsum and some other text"
-                imageLink="/employees/enricopasetto.jpg"
+                imageLink={translateSrc("/employees/enricopasetto.jpg")}
               />
               <EmployeePic
                 name="Enrico Pasetto"
                 role="CTO/CDO"
                 description="Lorem ipsum and some other text"
-                imageLink="/employees/enricopasetto.jpg"
+                imageLink={translateSrc("/employees/enricopasetto.jpg")}
               />
               <EmployeePic
                 name="Enrico Pasetto"
                 role="CTO/CDO"
                 description="Lorem ipsum and some other text"
-                imageLink="/employees/enricopasetto.jpg"
+                imageLink={translateSrc("/employees/enricopasetto.jpg")}
               />
               <EmployeePic
                 name="Enrico Pasetto"
                 role="CTO/CDO"
                 description="Lorem ipsum and some other text"
-                imageLink="/employees/enricopasetto.jpg"
+                imageLink={translateSrc("/employees/enricopasetto.jpg")}
               />
             </div>
           </div>
