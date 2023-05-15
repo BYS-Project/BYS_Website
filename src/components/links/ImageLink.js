@@ -9,19 +9,26 @@ export default function ImageLink({
   href,
   blank,
 }) {
-  const scale = scaleOnHover ? `hover:scale-[${scaleOnHover}]` : "";
   const baseColor = children.props.fill ? children.props.fill : "black";
   const [fill, setFill] = useState(baseColor);
+  const [scale, setScale] = useState("100%");
   const newElement = cloneElement(children, { fill: fill });
   return (
     <Link
       href={href}
       target={blank ? "_blank" : "_self"}
-      onMouseEnter={() => setFill(fillOnHover)}
-      onMouseLeave={() => setFill(baseColor)}
+      onMouseEnter={() => {
+        setFill(fillOnHover);
+        setScale(scaleOnHover);
+      }}
+      onMouseLeave={() => {
+        setFill(baseColor);
+        setScale("100%");
+      }}
       className={`${
         className ? className : ""
-      } ${scale} w-min h-full transition-all duration-150 ease-in`}
+      } w-min h-full transition-all duration-150 ease-in`}
+      style={{ transform: `scale(${scale})` }}
     >
       <div className="w-8 2xl:w-24 xl:w-20 lg:w-16 sm:w-14 xs:w-10 transition-all duration-150 ease-in">
         {newElement}

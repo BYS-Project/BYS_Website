@@ -6,31 +6,39 @@ import DiscordLogo from "@/components/logos/DiscordLogo";
 import LinkedInLogo from "@/components/logos/LinkedInLogo";
 import MediumLogo from "@/components/logos/MediumLogo";
 import TwitterLogo from "@/components/logos/TwitterLogo";
+import { MouseMoveGradient } from "@/components/mouseMove/MouseMoveAnimations";
 import { TranslateOnScroll } from "@/components/parallax/OnScroll";
 import EmployeePic from "@/components/specific/homepage/EmployeePic";
-import { H3, H8, H9 } from "@/components/text/Headers";
+import { H4, H8, H9 } from "@/components/text/Headers";
 
 export default function Home() {
   return (
     <div className="relative min-h-screen">
       {/* Main Section */}
-      <div className="relative flex items-center min-h-screen">
+      <div className="relative pt-44 min-h-screen">
         <div className="h-full w-full flex items-center justify-center">
           <div className="flex flex-col gap-8 w-full px-[10%]">
             <div className="flex flex-wrap w-full gap-8">
-              <div className="flex flex-col gap-8 w-2/3">
-                <H3 className="font-bold uppercase">
-                  SOME RANDOM <br /> AND COOL <br /> TEXT
-                </H3>
+              <MouseMoveGradient
+                className="flex flex-col gap-8 w-full"
+                from="#ea1d7c"
+                to="#4299d5"
+              >
+                <H4 className="font-extrabold uppercase">
+                  SOME RANDOM
+                  <br />
+                  AND COOL
+                  <br /> TEXT
+                </H4>
                 <H8>Small description of the project</H8>
-              </div>
+              </MouseMoveGradient>
             </div>
           </div>
         </div>
         <div className="absolute bottom-8 right-8 flex gap-8 w-min ">
           <ImageLink
             scaleOnHover="125%"
-            fillOnHover="red"
+            fillOnHover="white"
             href="https://discord.com"
             blank
           >
@@ -38,7 +46,7 @@ export default function Home() {
           </ImageLink>
           <ImageLink
             scaleOnHover="125%"
-            fillOnHover="red"
+            fillOnHover="white"
             href="https://twitter.com"
             blank
           >
@@ -46,7 +54,7 @@ export default function Home() {
           </ImageLink>
           <ImageLink
             scaleOnHover="125%"
-            fillOnHover="red"
+            fillOnHover="white"
             href="https://medium.com"
             blank
           >
@@ -54,7 +62,7 @@ export default function Home() {
           </ImageLink>
           <ImageLink
             scaleOnHover="125%"
-            fillOnHover="red"
+            fillOnHover="white"
             href="https://linkedin.com"
             blank
           >
@@ -66,9 +74,9 @@ export default function Home() {
       <TranslateOnScroll>
         <div className="relative pt-32 bg-black min-h-screen text-center flex items-center justify-center border-t-4 border-solid border-white justify-evenly">
           <div className="flex flex-col gap-5">
-            <H3 className="font-bold uppercase">
+            <H4 className="font-bold uppercase">
               CHECK OUR <br /> DASHBOARD!
-            </H3>
+            </H4>
             <H8>You will find informations like</H8>
             <div className="flex gap-5 flex-wrap items-center justify-center">
               <H9>Supporting the project - with the right achronym</H9>
@@ -85,9 +93,9 @@ export default function Home() {
       <TranslateOnScroll>
         <div className="relative pt-32 bg-black min-h-screen text-center flex items-center justify-center border-t-4 border-solid border-white justify-evenly">
           <div className="flex flex-col gap-5">
-            <H3 className="uppercase font-bold">
+            <H4 className="uppercase font-bold">
               Meet our <br /> team
-            </H3>
+            </H4>
             <div className="flex flex-wrap items-center justify-center gap-5 space-x-full">
               <EmployeePic
                 name="Enrico Pasetto"
