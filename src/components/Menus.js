@@ -3,13 +3,18 @@
 import Image from "next/image";
 import TextLink from "./links/TextLink";
 import { P1, P2 } from "./text/Paragraphs";
+import { translateSrc } from "@/commonFrontend";
 
 export function HomepageMenu() {
   return (
     <div className="fixed z-10 top-0 left-0 w-full text-3xl font-bold bg-white text-black p-4 border-b-4 border-solid border-black">
       <div className="flex justify-center items-center">
         <div className="relative w-20 sm:w-12 aspect-square transition-all duration-150 ease-in">
-          <Image src="/logos/bysColoredLogo.svg" fill alt="logo" />
+          <Image
+            src={translateSrc("/logos/bysColoredLogo.svg")}
+            fill
+            alt="logo"
+          />
         </div>
         <div className="w-full h-full flex justify-center sm:justify-end">
           <div className="grid sm:flex gap-y-0 gap-x-4">

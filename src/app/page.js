@@ -57,7 +57,7 @@ export default function Home() {
                   </ShowOnRender>
                 </TranslateY>
               </MouseMoveGradient>
-              <div className="absolute bottom-[2%] left-[2%]">
+              <div className="absolute bottom-[3.5%] left-[3.5%]">
                 <Socials className="flex gap-x-[10%] gap-y-[5%]" />
               </div>
             </div>
