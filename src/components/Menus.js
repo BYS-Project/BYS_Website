@@ -24,8 +24,8 @@ export function HomepageMenu() {
             <TextLink href="/dashboard" height="0.125rem">
               <P2>Dashboard</P2>
             </TextLink>
-            <TextLink href="/aboutus" height="0.125rem">
-              <P2>About Us</P2>
+            <TextLink href="/about" height="0.125rem">
+              <P2>About</P2>
             </TextLink>
             <TextLink href="/roadmap" height="0.125rem">
               <P2>Roadmap</P2>

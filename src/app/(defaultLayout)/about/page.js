@@ -2,18 +2,18 @@
 
 import { translateSrc } from "@/commonFrontend";
 import EmployeePic from "@/components/specific/homepage/EmployeePic";
-import { H4SP } from "@/components/text/Headers";
+import { H2, H4SP } from "@/components/text/Headers";
 import Link from "next/link";
 
 export default function AboutUs() {
   return (
     <div className="pt-44 flex justify-center items-center">
       <div>
-        <H4SP className="uppercase font-extrabold text-center">
+        <H2 className="uppercase font-extrabold text-center">
           <span className="text-first">Meet</span>{" "}
           <span className="text-third">our </span>
           <span className="text-forth">team!</span>
-        </H4SP>
+        </H2>
         <div className="flex flex-wrap justify-center items-center my-[5%] gap-2 md:gap-5">
           <Link
             href="https://www.linkedin.com/in/claudio-disma-brunetto-santolin-5609a2167/"
