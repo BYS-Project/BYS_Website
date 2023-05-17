@@ -10,13 +10,13 @@ export default function Socials({ className, monocrome }) {
     : { fillLinear: { from: "#ea1d7c", to: "#ce3389" } };
   const ap2 = monocrome
     ? { fill: "white" }
-    : { fillLinear: { from: "#ce3389", to: "#8866af" } };
+    : { fillLinear: { from: "#ea1d7c", to: "#ce3389" } };
   const ap3 = monocrome
     ? { fill: "white" }
-    : { fillLinear: { from: "#8866af", to: "#4299d5" } };
+    : { fillLinear: { from: "#ea1d7c", to: "#ce3389" } };
   const ap4 = monocrome
     ? { fill: "white" }
-    : { fillLinear: { from: "#4299d5", to: "white" } };
+    : { fillLinear: { from: "#ea1d7c", to: "#ce3389" } };
   return (
     <div className={className}>
       <ImageLink

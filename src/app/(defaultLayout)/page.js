@@ -26,10 +26,7 @@ export default function Home() {
                 to="#4299d5"
               >
                 <H4SP className="uppercase text-left font-extrabold">
-                  BUILD YOUR
-                  <br />
-                  SOUL <br />
-                  PROJECT
+                  BYS PROJECT
                 </H4SP>
                 <TranslateY>
                   <ShowOnRender toText="transparent">
