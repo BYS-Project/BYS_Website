@@ -1,7 +1,7 @@
 "use client";
-export default function Launchpad() {
+export default function Dashboard() {
   return (
-    <div className="flex items-center justify-center flex-1">
+    <div className="flex items-center justify-center flex-1 pt-44">
       <div className="flex flex-col gap-12">
         <div className="text-center flex flex-col gap-4 text-2xl">
           <h1 className="text-6xl font-bold">Welcome at $BYS</h1>

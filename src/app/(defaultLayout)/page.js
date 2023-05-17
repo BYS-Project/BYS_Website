@@ -1,6 +1,5 @@
 "use client";
 
-import { translateSrc } from "@/commonFrontend";
 import Socials from "@/components/Socials";
 import {
   CancelOnHover,
@@ -9,26 +8,15 @@ import {
 } from "@/components/animations/Animations";
 import { MouseMoveGradient } from "@/components/mouseMove/MouseMoveAnimations";
 import { TranslateOnScroll } from "@/components/parallax/OnScroll";
-import EmployeePic from "@/components/specific/homepage/EmployeePic";
-import {
-  H1,
-  H2,
-  H3,
-  H3SP,
-  H4,
-  H4SP,
-  H5,
-  H8,
-  H9,
-} from "@/components/text/Headers";
-import { P1, P1SP, P2 } from "@/components/text/Paragraphs";
+import { H2, H4SP } from "@/components/text/Headers";
+import { P1SP } from "@/components/text/Paragraphs";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="relative min-h-screen">
       {/* Mission */}
-      <div className="relative pt-44 min-h-screen">
+      <div className="relative min-h-screen pt-44">
         <div className="h-full w-full flex items-center justify-center">
           <div className="flex flex-col gap-8 w-full px-[10%]">
             <div className="flex flex-wrap w-full gap-8">
@@ -57,11 +45,11 @@ export default function Home() {
                   </ShowOnRender>
                 </TranslateY>
               </MouseMoveGradient>
-              <div className="absolute bottom-[3.5%] left-[3.5%]">
-                <Socials className="flex gap-x-[10%] gap-y-[5%]" />
-              </div>
             </div>
           </div>
+        </div>
+        <div className="absolute bottom-[3.5%] left-[3.5%]">
+          <Socials className="flex gap-x-[10%] gap-y-[5%]" />
         </div>
       </div>
       {/* Simplified Product */}
@@ -71,12 +59,12 @@ export default function Home() {
             <div className="font-extrabold uppercase text-center w-full">
               <div className="flex flex-col items-center justify-center">
                 <H4SP className="font-extrabold">Check out our:</H4SP>
-                <Link href="/docs/roadmap">
+                <Link href="/roadmap">
                   <CancelOnHover
                     className="text-third"
                     text="roadmap"
                     dimension={<H4SP />}
-                    lineColor="#ea1d7c"
+                    lineColor="#4299d5"
                   />
                 </Link>
               </div>
@@ -86,7 +74,7 @@ export default function Home() {
                     className="text-forth"
                     text="litepaper"
                     dimension={<H4SP />}
-                    lineColor="#ce3389"
+                    lineColor="#8866af"
                   />
                 </Link>
               </div>

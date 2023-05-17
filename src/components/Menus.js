@@ -37,10 +37,10 @@ export function HomepageMenu() {
   );
 }
 
-export function LaunchpadMenu() {
+export function DashboardMenu() {
   /* Not decent for mobile devices */
   return (
-    <div className="h-screen py-24 bg-white text-black w-max">
+    <div className="relative top-0 left-0 h-screen py-24 bg-white text-black w-max">
       <div className="h-full flex flex-col justify-evenly px-5 text-xl">
         <div className="flex flex-col gap-2">
           <P1 className="font-bold">USER</P1>

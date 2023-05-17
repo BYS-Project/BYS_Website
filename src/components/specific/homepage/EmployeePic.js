@@ -1,25 +1,34 @@
-import { P1 } from "@/components/text/Paragraphs";
+import { P1, P1SP, P2 } from "@/components/text/Paragraphs";
 import Image from "next/image";
 
-export default function EmployeePic({ name, role, description, imageLink }) {
+export default function EmployeePic({
+  name,
+  surname,
+  role,
+  description,
+  imageLink,
+}) {
   return (
-    <div className="flex p-2 items-center justify-center w-max h-full border-2 border-solid border-white rounded-xl">
-      {/* Links to LinkedIn, Twitter or Instagram for artists */}
-      <div className="flex flex-col gap-4">
-        <div className="grid gap-2 grid-cols-2">
-          <div className="relative flex items-center justify-center w-full h-full">
-            <div className=" relative w-full h-full aspect-square max-h-[10vh] max-w-[10vh]">
-              <Image className="rounded-full" src={imageLink} fill alt={name} />
-            </div>
-          </div>
-          <div className="flex items-center justify-center flex-col gap-2">
-            <P1 className="font-bold">{name}</P1>
-            <P1>{role}</P1>
-          </div>
+    <div className="group grid w-[15rem] xl:w-[32.5rem] md:w-[22.5rem] border-2 border-solid border-white rounded-xl p-[2.5%] hover:border-first transition-all duration-150 ease-in">
+      <div className="flex gap-[5%]">
+        <div className="relative aspect-square h-16 xl:h-24 md:h-20">
+          <Image
+            className="rounded-full group-hover:scale-110 transition-all duration-150 ease-in"
+            src={imageLink}
+            fill
+            alt={`${name} ${surname}`}
+          />
         </div>
-        <div className="flex items-center justify-center">
-          <P1 className="w-[90%]">{description}</P1>
+        <div className="text-center w-full grid">
+          <div className="font-extrabold">
+            <P1SP className="group-hover:text-first">{name}</P1SP>
+            <P1SP className="group-hover:text-second">{surname}</P1SP>
+          </div>
+          <P1SP className="group-hover:text-third font-bold">{role}</P1SP>
         </div>
+      </div>
+      <div className="my-[2.5%] text-center group-hover:text-forth font-bold">
+        <P2>{description}</P2>
       </div>
     </div>
   );

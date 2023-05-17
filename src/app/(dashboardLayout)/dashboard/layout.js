@@ -1,6 +1,6 @@
-import { HomepageMenu } from "@/components/Menus";
-import "./globals.css";
 import { Inter } from "next/font/google";
+import "../../globals.css";
+import { DashboardMenu, HomepageMenu } from "@/components/Menus";
 import { HomepageFooter } from "@/components/Footers";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -13,10 +13,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="bg-black text-white">
+      <body className={`${inter.className} text-white bg-black`}>
+        <div>
           <HomepageMenu />
-          <div>{children}</div>
+          <div className="flex">
+            <DashboardMenu />
+            {children}
+          </div>
           <HomepageFooter />
         </div>
       </body>
