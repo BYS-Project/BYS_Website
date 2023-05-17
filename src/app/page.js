@@ -10,7 +10,17 @@ import {
 import { MouseMoveGradient } from "@/components/mouseMove/MouseMoveAnimations";
 import { TranslateOnScroll } from "@/components/parallax/OnScroll";
 import EmployeePic from "@/components/specific/homepage/EmployeePic";
-import { H1, H3, H3SP, H4, H4SP, H5, H8, H9 } from "@/components/text/Headers";
+import {
+  H1,
+  H2,
+  H3,
+  H3SP,
+  H4,
+  H4SP,
+  H5,
+  H8,
+  H9,
+} from "@/components/text/Headers";
 import { P1, P1SP, P2 } from "@/components/text/Paragraphs";
 import Link from "next/link";
 
@@ -97,15 +107,15 @@ export default function Home() {
         <div className="relative pt-32 bg-black min-h-screen text-center flex items-center justify-center border-t-4 border-solid border-white justify-evenly">
           <div className="w-full h-full grid gap-y-[15%]">
             <div className="flex items-center justify-center">
-              <H4SP
-                style={{ "-webkit-text-stroke": "1px white" }}
+              <H2
+                style={{ WebkitTextStroke: "3px white" }}
                 className="font-extrabold text-first"
               >
                 HEY!
-              </H4SP>
+              </H2>
             </div>
             <div className="flex items-center justify-center">
-              <P1SP className="w-5/6 font-bold text-third">
+              <P1SP className="w-5/6 font-bold text-forth">
                 Are you a founder, creator, or member of a Web3 community?{" "}
                 <br /> Do you see room for collaboration with our project?{" "}
                 <br /> Please don&apos;t hesitate to contact us, even just to

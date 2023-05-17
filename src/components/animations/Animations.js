@@ -79,7 +79,7 @@ export function CancelOnHover({ text, dimension, lineColor, className }) {
       </div>
       <div
         style={{ backgroundColor: lineColor ? lineColor : "#ce3389" }}
-        className="absolute top-[50%] w-0 group-hover:w-full h-[15%] transition-all duration-300 ease-in rounded-xl"
+        className="absolute top-[50%] w-0 group-hover:w-full h-[15%] transition-all duration-[0.5s] ease-in rounded-xl"
       />
     </div>
   );

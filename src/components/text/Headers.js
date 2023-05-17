@@ -10,10 +10,11 @@ export function H1({ className, children, translationPath }) {
     </h1>
   );
 }
-export function H2({ className, children, translationPath }) {
+export function H2({ style, className, children, translationPath }) {
   const props = className ? className : "";
   return (
     <h1
+      style={style}
       className={`${props} text-[5rem] xl:text-[10.5rem] md:text-[6.5rem] leading-none transition-all duration-300 ease-in`}
     >
       {children}
