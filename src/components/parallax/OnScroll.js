@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-export function TranslateOnScroll({ children }) {
+export function TranslateOnScroll({ children, className }) {
   const ref = useRef(null);
   const childRef = useRef(null);
   const updatedTranslate = useRef(0);
@@ -35,15 +35,17 @@ export function TranslateOnScroll({ children }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
   return (
-    <div ref={ref} className={`relative w-full h-full`}>
-      <div
-        ref={childRef}
-        className="relative top-0 left-0 w-full h-full transition-all duration-150 ease-linear"
-        style={{
-          transform: `translateY(${translate}px)`,
-        }}
-      >
-        {children}
+    <div className={className}>
+      <div ref={ref} className={`relative w-full h-full`}>
+        <div
+          ref={childRef}
+          className="relative top-0 left-0 w-full h-full transition-all duration-150 ease-linear"
+          style={{
+            transform: `translateY(${translate}px)`,
+          }}
+        >
+          {children}
+        </div>
       </div>
     </div>
   );

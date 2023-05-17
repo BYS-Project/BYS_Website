@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <div className="bg-black text-white">
           <HomepageMenu />
-          {children}
+          <div>{children}</div>
           <HomepageFooter />
         </div>
       </body>

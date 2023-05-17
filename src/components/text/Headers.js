@@ -1,88 +1,112 @@
-export function H1({ className, children }) {
+"use client";
+
+export function H1({ className, children, translationPath }) {
   const props = className ? className : "";
   return (
     <h1
-      className={`${props} text-[4rem] 2xl:text-[10rem] xl:text-[8rem] lg:text-[6rem] sm:text-[4rem] xs:text-[4rem] leading-none transition-all duration-300 ease-in`}
+      className={`${props} text-[6.5rem] xl:text-[13.5rem] md:text-[8.5rem] leading-none transition-all duration-300 ease-in`}
     >
       {children}
     </h1>
   );
 }
-export function H2({ className, children }) {
+export function H2({ className, children, translationPath }) {
   const props = className ? className : "";
   return (
     <h1
-      className={`${props} text-[4rem] 2xl:text-[9rem] xl:text-[7rem] lg:text-[5rem] sm:text-[4rem] xs:text-[4rem] leading-none transition-all duration-300 ease-in`}
+      className={`${props} text-[5rem] xl:text-[10.5rem] md:text-[6.5rem] leading-none transition-all duration-300 ease-in`}
     >
       {children}
     </h1>
   );
 }
-export function H3({ className, children }) {
+export function H3({ className, children, translationPath }) {
   const props = className ? className : "";
   return (
     <h1
-      className={`${props} text-[4rem] 2xl:text-[8rem] xl:text-[6rem] lg:text-[4rem] sm:text-[4rem] xs:text-[4rem] leading-none transition-all duration-300 ease-in`}
+      className={`${props} text-[4rem] xl:text-[8rem] md:text-[5rem] leading-none transition-all duration-300 ease-in`}
     >
       {children}
     </h1>
   );
 }
-export function H4({ className, children }) {
+export function H3SP({ className, children, translationPath }) {
   const props = className ? className : "";
   return (
     <h1
-      className={`${props} text-[3rem] 2xl:text-[7rem] xl:text-[5rem] lg:text-[3rem] sm:text-[3rem] xs:text-[3rem] leading-none transition-all duration-300 ease-in`}
+      className={`${props} text-[3.5rem] xl:text-[8rem] md:text-[4rem] leading-none transition-all duration-300 ease-in`}
     >
       {children}
     </h1>
   );
 }
-export function H5({ className, children }) {
+export function H4({ className, children, translationPath }) {
   const props = className ? className : "";
   return (
     <h1
-      className={`${props} text-[3rem] 2xl:text-[6rem] xl:text-[4rem] lg:text-[2rem] sm:text-[3rem] xs:text-[3rem] leading-none transition-all duration-300 ease-in`}
+      className={`${props} text-[3.5rem] xl:text-[6rem] md:text-[4rem] leading-none transition-all duration-300 ease-in`}
     >
       {children}
     </h1>
   );
 }
-export function H6({ className, children }) {
+export function H4SP({ style, className, children, translationPath }) {
   const props = className ? className : "";
   return (
     <h1
-      className={`${props} text-[3rem] 2xl:text-[5rem] xl:text-[3rem] lg:text-[3rem] sm:text-[3rem] xs:text-[3rem] leading-none transition-all duration-300 ease-in`}
+      style={style}
+      className={`${props} text-[3rem] xl:text-[6rem] md:text-[5.5rem] leading-none transition-all duration-300 ease-in`}
     >
       {children}
     </h1>
   );
 }
-export function H7({ className, children }) {
+export function H5({ className, children, translationPath, style }) {
   const props = className ? className : "";
   return (
     <h1
-      className={`${props} text-[2rem] 2xl:text-[4rem] xl:text-[2rem] lg:text-[2rem] sm:text-[2rem] xs:text-[2rem] leading-none transition-all duration-300 ease-in`}
+      style={style}
+      className={`${props} text-[3rem] xl:text-[5.5rem] md:text-[3.5rem] leading-none transition-all duration-300 ease-in`}
     >
       {children}
     </h1>
   );
 }
-export function H8({ className, children }) {
+export function H6({ className, children, translationPath }) {
   const props = className ? className : "";
   return (
     <h1
-      className={`${props} text-[2rem] 2xl:text-[3rem] xl:text-[3rem] lg:text-[2rem] sm:text-[2rem] xs:text-[2rem] leading-none transition-all duration-300 ease-in`}
+      className={`${props} text-[2.75rem] xl:text-[4.5rem] md:text-[3rem] leading-none transition-all duration-300 ease-in`}
     >
       {children}
     </h1>
   );
 }
-export function H9({ className, children }) {
+export function H7({ className, children, translationPath }) {
   const props = className ? className : "";
   return (
     <h1
-      className={`${props} text-[2rem] 2xl:text-[2rem] xl:text-[2rem] lg:text-[2rem] sm:text-[2rem] xs:text-[2rem] leading-none transition-all duration-300 ease-in`}
+      className={`${props} text-[2.5rem] xl:text-[4.25rem] md:text-[2.75rem] leading-none transition-all duration-300 ease-in`}
+    >
+      {children}
+    </h1>
+  );
+}
+export function H8({ className, children, translationPath }) {
+  const props = className ? className : "";
+  return (
+    <h1
+      className={`${props} text-[2.25rem] xl:text-[4rem] md:text-[2.5rem] leading-none transition-all duration-300 ease-in`}
+    >
+      {children}
+    </h1>
+  );
+}
+export function H9({ className, children, translationPath }) {
+  const props = className ? className : "";
+  return (
+    <h1
+      className={`${props} text-[2rem] xl:text-[3.75rem] md:text-[2.25rem] leading-none transition-all duration-300 ease-in`}
     >
       {children}
     </h1>
