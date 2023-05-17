@@ -91,14 +91,14 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="flex items-center justify-center">
+            <TranslateY className="flex items-center justify-center" safe>
               <P1SP className="w-2/3 font-bold text-first">
                 Explore the features of the Community Hub, our digital tool
                 specifically designed for Web3 communities: IP ideation,
                 community database, DAO, revenue sharing, and more. <br /> Read
                 the full documentation to discover the next steps along the way.
               </P1SP>
-            </div>
+            </TranslateY>
           </div>
         </div>
       </TranslateOnScroll>
@@ -114,7 +114,7 @@ export default function Home() {
                 HEY!
               </H2>
             </div>
-            <div className="flex items-center justify-center">
+            <TranslateY className="flex items-center justify-center" safe>
               <P1SP className="w-5/6 font-bold text-forth">
                 Are you a founder, creator, or member of a Web3 community?{" "}
                 <br /> Do you see room for collaboration with our project?{" "}
@@ -122,7 +122,7 @@ export default function Home() {
                 chat. <br /> It is always a pleasure to meet enterprising
                 figures who share our passion.
               </P1SP>
-            </div>
+            </TranslateY>
           </div>
         </div>
       </TranslateOnScroll>

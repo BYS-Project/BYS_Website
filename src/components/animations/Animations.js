@@ -20,7 +20,7 @@ export function ShowOnRender({ children, className, toText }) {
     </div>
   );
 }
-export function TranslateY({ children, className }) {
+export function TranslateY({ children, className, safe }) {
   const ref = useRef(null);
   const [trigger, setTrigger] = useState(false);
   const handleScroll = useCallback(() => {
@@ -38,8 +38,14 @@ export function TranslateY({ children, className }) {
     <div
       ref={ref}
       className={`${className ? className : ""} ${
-        trigger ? "pt-0" : "pt-[100vh]"
-      } transition-all duration-300 ease-in-out`}
+        !safe
+          ? trigger
+            ? "pt-0"
+            : "pt-[100vh]"
+          : trigger
+          ? "translate-y-0"
+          : "translate-y-full"
+      } transition-all duration-[0.5s] ease-in-out`}
     >
       {children}
     </div>
@@ -79,7 +85,7 @@ export function CancelOnHover({ text, dimension, lineColor, className }) {
       </div>
       <div
         style={{ backgroundColor: lineColor ? lineColor : "#ce3389" }}
-        className="absolute top-[50%] w-0 group-hover:w-full h-[15%] transition-all duration-[0.5s] ease-in rounded-xl"
+        className="absolute top-[50%] w-0 group-hover:w-full h-[15%] transition-all duration-300 ease-in rounded-xl"
       />
     </div>
   );
