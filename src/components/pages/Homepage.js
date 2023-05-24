@@ -6,14 +6,16 @@ import Image from "next/image";
 export function HeroSection() {
   return (
     <div className="relative h-full w-full bg-gradient-to-bl from-40% from-black to-white overflow-hidden">
+      {/* 
       <div className="relative w-full h-full flex items-center justify-center">
         <div className="absolute top-[10vh] -translate-x-full rounded-full w-[30%] aspect-square bg-[rgba(255,255,255,0.05)]" />
         <div className="absolute top-[10vh] rounded-full w-[50%] aspect-square bg-[rgba(255,255,255,0.05)]" />
         <div className="absolute top-[20vh] translate-x-full rounded-full w-[35%] aspect-square bg-[rgba(255,255,255,0.05)]" />
-      </div>
-      <div className="absolute top-0 left-0 opacity-[1]">
-        <video className="aspect-video" width="100%" autoPlay muted loop>
-          <source src="/video/background2.mp4" type="video/mp4" />
+      </div> 
+      */}
+      <div className="absolute top-0 left-0 opacity-[0.8]">
+        <video className="aspect-video w-full" autoPlay muted loop>
+          <source src="/video/background1.mp4" type="video/mp4" />
         </video>
       </div>
       <div className="relative">
