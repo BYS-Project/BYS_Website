@@ -3,7 +3,7 @@ import {
   LinkedinLogo,
   MediumLogo,
   TwitterLogo,
-} from "../svgComponents/Logos";
+} from "../svg/Logos";
 import { H3, H6 } from "../text/Headers";
 import { P1, P3, P4 } from "../text/Paragraphs";
 

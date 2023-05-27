@@ -1,8 +1,7 @@
 "use client";
 
 import { translateSrc } from "@/commonFrontend";
-import { HeroSection, Mission, StoSection } from "@/components/pages/Homepage";
-import { Arrow } from "@/components/svgComponents/UI";
+import { Arrow } from "@/components/svg/UI";
 import { H2, H3, H4 } from "@/components/text/Headers";
 import { P1 } from "@/components/text/Paragraphs";
 
