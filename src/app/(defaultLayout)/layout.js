@@ -2,6 +2,7 @@ import { Space_Mono } from "next/font/google";
 import "../globals.css";
 import { HomepageMenu } from "@/components/common/Menus";
 import { HomepageFooter } from "@/components/common/Footers";
+import ScrollProvider from "@/providers/ScrollProvider";
 
 const font = Space_Mono({ subsets: ["latin"], weight: "400" });
 
@@ -14,11 +15,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${font.className} text-white bg-black`}>
-        <div>
+        <ScrollProvider>
           <HomepageMenu />
           {children}
           <HomepageFooter />
-        </div>
+        </ScrollProvider>
       </body>
     </html>
   );
