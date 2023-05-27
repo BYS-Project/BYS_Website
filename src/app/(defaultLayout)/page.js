@@ -113,7 +113,7 @@ export default function Home() {
           </div>
         </div>
       </OnScroll>
-      <div className="h-screen bg-white"></div>
+      <div className="bg-red-500 min-h-[200vh]"></div>
     </div>
   );
 }

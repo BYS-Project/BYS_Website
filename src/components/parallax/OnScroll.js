@@ -8,32 +8,30 @@ export function OnScroll({ children, coeff }) {
   const { scroll } = useContext(ScrollContext);
   const lastScroll = useRef(0);
   const fix = useRef(false);
-  const hide = useRef(false);
   useEffect(() => {
+    const halfHeight = window.innerHeight / 2;
     const parentY = parentRef.current.getBoundingClientRect().y;
-    const distance = window.innerHeight / 2 - parentY;
+    const distance = halfHeight - parentY;
     const childrenY = childrenRef.current.getBoundingClientRect().y;
     const scrollUp = lastScroll.current - scroll > 0;
-    if (scrollUp) {
+    if (!scrollUp) {
       if (parentY > 0) {
-        fix.current = false;
+        if (childrenY > 0 && !fix.current) {
+          setDelta((distance + halfHeight) * -1);
+        } else {
+          setDelta(delta - childrenY);
+          fix.current = true;
+        }
       } else {
-        fix.current = true;
+        setDelta(0);
       }
-      hide.current = false;
     } else {
-      if (childrenY < 0 && !hide.current) {
-        fix.current = true;
-        hide.current = false;
-      } else if (parentY <= -1 * parentRef.current.offsetHeight) {
-        fix.current = false;
-        hide.current = true;
+      if (parentY >= window.innerHeight) {
+        setDelta(0);
+      } else {
+        setDelta((distance + halfHeight) * -1);
       }
-    }
-    if (fix.current) {
-      setDelta(delta - childrenY);
-    } else {
-      setDelta(distance * -1 * coeff);
+      fix.current = false;
     }
     lastScroll.current = scroll;
   }, [coeff, delta, scroll]);
