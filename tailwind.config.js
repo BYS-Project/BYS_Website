@@ -17,6 +17,7 @@ module.exports = {
         second: "#ce3389",
         third: "#8866af",
         forth: "#4299d5",
+        heroBackground: "#071870",
       },
     },
   },

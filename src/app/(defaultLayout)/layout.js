@@ -1,9 +1,9 @@
-import { Inter } from "next/font/google";
+import { Space_Mono } from "next/font/google";
 import "../globals.css";
 import { HomepageMenu } from "@/components/common/Menus";
 import { HomepageFooter } from "@/components/common/Footers";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Space_Mono({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
   title: "Build Your Soul",
@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} text-white bg-black`}>
+      <body className={`${font.className} text-white bg-black`}>
         <div>
           <HomepageMenu />
           {children}
