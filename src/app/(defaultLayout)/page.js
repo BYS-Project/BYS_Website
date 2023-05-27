@@ -44,7 +44,7 @@ export default function Home() {
         </div>
       </div>
       <OnScroll coeff={1}>
-        <div className="relative z-10 bg-white w-full h-screen rounded-xl text-heroBackground flex flex-col justify-center">
+        <div className="relative z-10 bg-white w-full h-screen rounded-xl text-heroBackground flex flex-col justify-center border-2 border-solid border-heroBackground">
           <div className="h-full flex flex-col justify-around">
             <div className="grid gap-5 ml-[5%] max-w-[70%]">
               <H5 className="font-bold">What&apos;s SOULution?</H5>
@@ -68,7 +68,7 @@ export default function Home() {
         </div>
       </OnScroll>
       <OnScroll coeff={1}>
-        <div className="relative z-10 bg-white w-full h-screen rounded-xl text-heroBackground flex flex-wrap justify-center items-center">
+        <div className="relative z-10 bg-white w-full h-screen rounded-xl text-heroBackground flex flex-wrap justify-center items-center border-2 border-solid border-heroBackground">
           <div className="flex flex-wrap justify-center gap-10 text-center">
             <div className="relative max-w-[30rem] flex flex-col items-center justify-center">
               <div>Img</div>
