@@ -1,5 +1,6 @@
 "use client";
 
+import { translateSrc } from "@/commonFrontend";
 import { HeroSection, Mission, StoSection } from "@/components/pages/Homepage";
 import { Arrow } from "@/components/svgComponents/UI";
 import { H2, H3, H4 } from "@/components/text/Headers";
@@ -15,7 +16,10 @@ export default function Home() {
           loop
           muted
         >
-          <source src="/video/heroBackground.mp4" type="video/mp4" />
+          <source
+            src={translateSrc("video/heroBackground.mp4")}
+            type="video/mp4"
+          />
         </video>
         <div className="relative w-full h-screen text-center pb-[5vh] mx-[5%] flex flex-col flex justify-around">
           <div className="flex justify-start">
