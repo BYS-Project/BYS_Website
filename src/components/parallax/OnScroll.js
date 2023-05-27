@@ -1,99 +1,46 @@
-/*
-import ScrollContext from "@/contexts/ScrollContext";
-import { useContext, useEffect, useRef, useState } from "react";
-
-export function OnScroll({ children, coeff }) {
-  const parentRef = useRef(null);
-  const childrenRef = useRef(null);
-  const [delta, setDelta] = useState(0);
-  const { scroll } = useContext(ScrollContext);
-  const lastScroll = useRef(0);
-  const fix = useRef(false);
-  useEffect(() => {
-    const halfHeight = window.innerHeight / 2;
-    const parentY = parentRef.current.getBoundingClientRect().y;
-    const distance = halfHeight - parentY;
-    const childrenY = childrenRef.current.getBoundingClientRect().y;
-    const scrollUp = lastScroll.current - scroll > 0;
-    if (!scrollUp) {
-      if (parentY > 0) {
-        if (childrenY > 0 && !fix.current) {
-          setDelta((distance + halfHeight) * -1);
-        } else {
-          setDelta(delta - childrenY);
-          fix.current = true;
-        }
-      } else {
-        setDelta(0);
-      }
-    } else {
-      if (parentY >= window.innerHeight) {
-        setDelta(0);
-      } else {
-        setDelta((distance + halfHeight) * -1);
-      }
-      fix.current = false;
-    }
-    lastScroll.current = scroll;
-  }, [coeff, delta, scroll]);
-  return (
-    <div ref={parentRef}>
-      <div style={{ transform: `translateY(${delta}px)` }} ref={childrenRef}>
-        {children}
-      </div>
-    </div>
-  );
-}
-*/
-
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import ScrollContext from "@/contexts/ScrollContext";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
 
-export function OnScroll({ children, className }) {
-  const ref = useRef(null);
-  const childRef = useRef(null);
-  const updatedTranslate = useRef(0);
-  const [translate, setTranslate] = useState(0);
-  let maxDistance = useRef(0);
-  const handleScroll = useCallback(() => {
-    if (childRef && ref) {
-      // Without this, a page change would trigger an error - even with the return and remotion of the event listener
-      const childDist = childRef.current.getBoundingClientRect().top;
-      const parentDistance = ref.current.getBoundingClientRect().top;
-      if (parentDistance > maxDistance) {
-        maxDistance.current = parentDistance;
-      }
-      const parentHeight = ref.current.offsetHeight;
-      const finalOffset = -maxDistance.current + parentDistance - parentHeight;
-      if (childDist > 0) {
-        if (-finalOffset < window.screen.height) {
-          setTranslate(finalOffset);
-          updatedTranslate.current = finalOffset;
+export function OnScroll({ children, coeff }) {
+  const { scroll } = useContext(ScrollContext);
+  const parsedCoeff = useRef(coeff ? coeff : 1);
+  const parentRef = useRef(null);
+  const childrenRef = useRef(null);
+  const lastScroll = useRef(0);
+  const [position, setPosition] = useState("relative");
+  const [offset, setOffset] = useState(0);
+  useEffect(() => {
+    const parentY = parentRef.current.getBoundingClientRect().y;
+    const childY = childrenRef.current.getBoundingClientRect().y;
+    if (scroll > lastScroll.current) {
+      if (childY <= 0) {
+        if (parentY < 0) {
+          setPosition("relative");
+        } else {
+          setOffset(0);
+          setPosition("fixed");
         }
       } else {
-        const diff = updatedTranslate.current - childDist;
-        setTranslate(diff > 0 ? 0 : diff);
-        // not updating the diff causes a loss of the div. Updating it makes more problems
+        const newOffset = window.innerHeight - parentY;
+        setOffset(newOffset * -1 * coeff);
+      }
+    } else {
+      if (parentY >= childrenRef.current.offsetHeight) {
+        setPosition("relative");
       }
     }
-  }, []);
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
+    lastScroll.current = scroll;
+  }, [coeff, scroll]);
   return (
-    <div className={className}>
-      <div ref={ref} className={`relative w-full h-full`}>
-        <div
-          ref={childRef}
-          className="relative top-0 left-0 w-full h-full transition-all duration-150 ease-linear"
-          style={{
-            transform: `translateY(${translate}px)`,
-          }}
-        >
-          {children}
-        </div>
+    <div ref={parentRef} className="relative">
+      <div
+        ref={childrenRef}
+        className="top-0 left-0"
+        style={{ position: position, transform: `translateY(${offset}px)` }}
+      >
+        {children}
       </div>
     </div>
   );
