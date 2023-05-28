@@ -1,7 +1,14 @@
 "use client";
 
 import ScrollContext from "@/contexts/ScrollContext";
-import { useCallback, useContext, useEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 export function OnScroll({ children, coeff }) {
   const { scroll } = useContext(ScrollContext);
@@ -11,6 +18,10 @@ export function OnScroll({ children, coeff }) {
   const lastScroll = useRef(0);
   const [position, setPosition] = useState("relative");
   const [offset, setOffset] = useState(0);
+  const childrenH = useRef(0);
+  useEffect(() => {
+    childrenH.current = childrenRef.current.offsetHeight;
+  }, []);
   useEffect(() => {
     const parentY = parentRef.current.getBoundingClientRect().y;
     const childY = childrenRef.current.getBoundingClientRect().y;
@@ -24,17 +35,19 @@ export function OnScroll({ children, coeff }) {
         }
       } else {
         const newOffset = window.innerHeight - parentY;
-        setOffset(newOffset * -1 * coeff);
+        setOffset(newOffset * -1 * parsedCoeff.current);
       }
     } else {
-      if (parentY >= childrenRef.current.offsetHeight) {
-        setPosition("relative");
-      }
+      setPosition("relative");
     }
     lastScroll.current = scroll;
   }, [coeff, scroll]);
   return (
-    <div ref={parentRef} className="relative">
+    <div
+      ref={parentRef}
+      className="relative"
+      style={{ minHeight: `${childrenH.current}px` }}
+    >
       <div
         ref={childrenRef}
         className="top-0 left-0"

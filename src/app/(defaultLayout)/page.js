@@ -53,8 +53,8 @@ export default function Home() {
                 <span className="font-bold">community management</span> and{" "}
                 <span className="font-bold">expansion</span>. The platform
                 provides everything you need to onboard members and grow through{" "}
-                <span className="font-bold">storytelling</span>
-                and <span className="font-bold">gamification</span>.
+                <span className="font-bold">storytelling</span> and{" "}
+                <span className="font-bold">gamification</span>.
               </P1>
               <div className="w-max py-2 px-6 bg-heroBackground rounded-full text-white">
                 <P1>Read Docs</P1>
@@ -67,7 +67,7 @@ export default function Home() {
           </div>
         </div>
       </OnScroll>
-      <OnScroll coeff={1}>
+      <OnScroll coeff={1.25}>
         <div className="relative z-10 bg-white w-full h-screen rounded-xl text-heroBackground flex flex-wrap justify-center items-center border-2 border-solid border-heroBackground">
           <div className="flex flex-wrap justify-center gap-10 text-center">
             <div className="relative max-w-[30rem] flex flex-col items-center justify-center">
