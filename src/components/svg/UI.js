@@ -24,11 +24,11 @@ export function Circle({ fill }) {
     >
       <defs>
         <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#E4E4E4" />
-          <stop offset="100%" stop-color="#243A87" />
+          <stop offset="0%" stopColor="#E4E4E4" />
+          <stop offset="100%" stopColor="#243A87" />
         </linearGradient>
       </defs>
-      <g fill-rule="evenodd">
+      <g fillRule="evenodd">
         <circle cx="100" cy="100" r="100" fill="url(#gradient)" />
       </g>
     </svg>
@@ -45,8 +45,8 @@ export function Mask({ fill }) {
     >
       <defs>
         <linearGradient id="maskGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#E4E4E4" />
-          <stop offset="100%" stop-color="#243A87" />
+          <stop offset="0%" stopColor="#E4E4E4" />
+          <stop offset="100%" stopColor="#243A87" />
         </linearGradient>
       </defs>
       <path

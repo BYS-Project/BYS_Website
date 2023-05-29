@@ -52,7 +52,7 @@ export default function Home() {
           <div className="absolute w-72 aspect-square bottom-0 left-0 translate-y-1/2 -translate-x-1/2">
             <Circle />
           </div>
-          <div className="absolute w-72 aspect-square bottom-0 right-0 translate-y-1/2 -translate-x-1/2">
+          <div className="absolute w-[25rem] aspect-square bottom-0 right-0 -translate-y-1/2 translate-x-1/2">
             <Mask />
           </div>
           <div className="h-full flex flex-col justify-around gap-10">
@@ -124,7 +124,6 @@ export default function Home() {
           </div>
         </div>
       </Section>
-      <div className="bg-red-500 min-h-[200vh]"></div>
     </div>
   );
 }
