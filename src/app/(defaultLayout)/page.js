@@ -1,15 +1,16 @@
 "use client";
 
 import { translateSrc } from "@/commonFrontend";
+import Section from "@/components/common/Section";
 import { OnScroll } from "@/components/parallax/OnScroll";
-import { Arrow } from "@/components/svg/UI";
+import { Arrow, Circle, Mask } from "@/components/svg/UI";
 import { H2, H3, H4, H5 } from "@/components/text/Headers";
 import { P1, P2 } from "@/components/text/Paragraphs";
 
 export default function Home() {
   return (
     <div className="relative w-full h-full">
-      <div className="relative pt-[10vh] flex gap-8 items-center justify-center w-full h-full min-h-screen bg-heroBackground">
+      <Section className="relative pt-[10vh] flex gap-8 items-center justify-center w-full h-full min-h-screen bg-heroBackground">
         <video
           className="absolute top-0 left-0 w-full h-full object-cover opacity-[0.3]"
           autoPlay
@@ -37,16 +38,25 @@ export default function Home() {
             <P1>Explore SOULution</P1>
             <div className="w-full flex justify-center">
               <div className="w-12 aspect-square -rotate-90">
-                <Arrow fill="white" />
+                <Arrow fill="#E4E4E4" />
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <OnScroll coeff={1}>
-        <div className="relative z-10 bg-white w-full h-screen rounded-xl text-heroBackground flex flex-col justify-center border-2 border-solid border-heroBackground">
-          <div className="h-full flex flex-col justify-around">
-            <div className="grid gap-5 ml-[5%] max-w-[70%]">
+      </Section>
+      <Section
+        active={true}
+        className="relative flex flex-col gap-5 bg-greyBackground w-full min-h-screen rounded-t-xl text-heroBackground overflow-hidden"
+      >
+        <div className="relative min-h-screen flex flex-col justify-center">
+          <div className="absolute w-72 aspect-square bottom-0 left-0 translate-y-1/2 -translate-x-1/2">
+            <Circle />
+          </div>
+          <div className="absolute w-72 aspect-square bottom-0 right-0 translate-y-1/2 -translate-x-1/2">
+            <Mask />
+          </div>
+          <div className="h-full flex flex-col justify-around gap-10">
+            <div className="grid gap-10 ml-[5%] max-w-[70%]">
               <H5 className="font-bold">What&apos;s SOULution?</H5>
               <P1>
                 SOULution is our digital tool designed to simplify{" "}
@@ -66,9 +76,10 @@ export default function Home() {
             </P1>
           </div>
         </div>
-      </OnScroll>
-      <OnScroll coeff={1.25}>
-        <div className="relative z-10 bg-white w-full h-screen rounded-xl text-heroBackground flex flex-wrap justify-center items-center border-2 border-solid border-heroBackground">
+        <div className="relative min-h-screen flex flex-col justify-center">
+          <div className="absolute w-72 aspect-square bottom-0 right-0 translate-y-1/2 translate-x-1/2">
+            <Circle />
+          </div>
           <div className="flex flex-wrap justify-center gap-10 text-center">
             <div className="relative max-w-[30rem] flex flex-col items-center justify-center">
               <div>Img</div>
@@ -112,7 +123,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </OnScroll>
+      </Section>
       <div className="bg-red-500 min-h-[200vh]"></div>
     </div>
   );
