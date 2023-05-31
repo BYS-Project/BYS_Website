@@ -15,6 +15,7 @@ export default function Home() {
         active
         themes={["transparent", "blue"]}
         className="relative pt-[10vh] flex gap-8 items-center justify-center w-full h-full min-h-screen bg-blue"
+        style={{ textShadow: "1px 1px 1px white" }}
       >
         <video
           className="absolute top-0 left-0 w-full h-full object-cover opacity-[0.3]"
@@ -49,11 +50,14 @@ export default function Home() {
           </div>
         </div>
       </Section>
-      <div className="bg-blue">
+      <div
+        className="bg-blue overflow-hidden"
+        style={{ textShadow: "1px 1px 1px white" }}
+      >
         <Section
           themes={["grey", "blue"]}
           active
-          className="relative flex flex-col gap-5 bg-grey w-full min-h-screen rounded-t-xl text-blue overflow-hidden"
+          className="relative py-4 flex flex-col gap-5 bg-grey w-full min-h-screen rounded-t-xl text-blue "
         >
           <div className="relative min-h-screen flex flex-col justify-center">
             <div className="absolute w-72 aspect-square bottom-0 left-0 translate-y-1/2 -translate-x-1/2">
@@ -63,8 +67,8 @@ export default function Home() {
             <div className="absolute w-[25rem] aspect-square bottom-0 right-0 -translate-y-1/2 translate-x-1/2">
               <Mask />
             </div>
-            <div className="h-full flex flex-col justify-around gap-10">
-              <div className="grid gap-10 ml-[5%] max-w-[70%]">
+            <div className="relative h-full flex flex-col justify-around gap-10">
+              <div className="relative grid gap-10 ml-[5%] max-w-[95%] sm:max-w-[70%]">
                 <H8 className="font-extrabold">What&apos;s SOULution?</H8>
                 <P1>
                   SOULution is our digital tool designed to simplify{" "}
@@ -135,17 +139,17 @@ export default function Home() {
           </div>
         </Section>
       </div>
-      <div className="bg-grey">
+      <div
+        className="bg-grey overflow-hidden"
+        style={{ textShadow: "1px 1px 1px white" }}
+      >
         <Section
           themes={["blue", "grey"]}
           active
-          className="relative flex flex-col gap-5 bg-blue w-full min-h-screen rounded-t-3xl text-grey overflow-hidden"
+          className="relative flex flex-col gap-5 bg-blue w-full min-h-screen rounded-t-3xl text-grey py-2"
         >
-          <div className="grid grid-cols-2 h-max w-full min-h-screen">
-            <div className="w-full h-full flex items-center -translate-x-[25%]">
-              <div className="bg-white w-full h-[60%] rounded-3xl"></div>
-            </div>
-            <div className="flex flex-col gap-10 pt-20 pr-[10%]">
+          <div className="flex flex-wrap sm:grid sm:grid-cols-2 h-max w-full min-h-screen">
+            <div className="flex flex-col gap-10 sm:pt-20 px-[5%] sm:pr-[10%] text-center sm:text-left sm:col-start-2">
               <H8 className={"font-extrabold"}>Tailored to your Community.</H8>
               <P1>
                 Customize every aspect of your community experience with
@@ -153,24 +157,31 @@ export default function Home() {
                 we put you in control. Build your own Hogwarts for your
                 wizarding community.
               </P1>
-              <P4
-                className={`w-max text-blue bg-grey rounded-full px-4 py-2 font-bold transition-all duration-150 ease-out`}
-              >
-                Take a look
-              </P4>
+              <div className="flex items-center sm:items-start justify-center sm:justify-start w-full">
+                <P4
+                  className={`w-max text-blue bg-grey rounded-full px-4 py-2 font-bold transition-all duration-150 ease-out`}
+                >
+                  Take a look
+                </P4>
+              </div>
+            </div>
+            <div className="w-full h-full flex items-center sm:-translate-x-[25%] sm:col-start-1 sm:row-start-1">
+              <div className="bg-white w-full aspect-video rounded-3xl"></div>
             </div>
           </div>
-          <div className="min-h-screen grid grid-cols-2">
+          <div className="min-h-screen flex flex-col sm:grid sm:grid-cols-2 gap-20 sm:gap-0 text-center sm:text-left">
             <div className="flex flex-col justify-center px-[10%] gap-10">
               <P1>
                 Our team will support you at every stage ensuring a smooth
                 process and an optimized result.
               </P1>
-              <P4
-                className={`w-max text-blue bg-grey rounded-full px-4 py-2 font-bold transition-all duration-150 ease-out`}
-              >
-                Book a Demo
-              </P4>
+              <div className="flex items-center justify-center sm:justify-start">
+                <P4
+                  className={`w-max text-blue bg-grey rounded-full px-4 py-2 font-bold transition-all duration-150 ease-out`}
+                >
+                  Book a Demo
+                </P4>
+              </div>
             </div>
             <div className="flex flex-col justify-center gap-5 font-extrabold text-center rounded-t-3xl">
               <H8>Personalize</H8>
@@ -184,11 +195,14 @@ export default function Home() {
           </div>
         </Section>
       </div>
-      <div className="bg-blue">
+      <div
+        className="bg-blue overflow-hidden"
+        style={{ textShadow: "1px 1px 1px white" }}
+      >
         <Section
           themes={["grey", "blue"]}
           active
-          className="relative flex flex-col items-center justify-center gap-5 bg-lightBlue w-full h-full min-h-screen rounded-t-3xl text-grey overflow-hidden"
+          className="relative flex flex-col items-center justify-center gap-5 bg-lightBlue w-full h-full min-h-screen rounded-t-3xl text-grey "
         >
           <div className="w-full h-full flex flex-col items-center justify-center gap-10 text-center">
             <H8 className={"uppercase font-extrabold mx-[5%]"}>

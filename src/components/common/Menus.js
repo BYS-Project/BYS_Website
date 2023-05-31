@@ -25,12 +25,12 @@ export function HomepageMenu() {
           : theme === "blue"
           ? "text-blue bg-grey"
           : "text-grey bg-transparent"
-      } fixed z-10 top-0 left-0 py-4 px-8 grid grid-cols-3 gap-8 w-full transition-all duration-150 ease-out`}
+      } fixed z-10 top-0 left-0 py-1 sm:py-4 px-2 sm:px-8 grid grid-cols-3 gap-8 w-full transition-all duration-150 ease-out text-center`}
     >
       <div className="flex items-center justify-start gap-4">
         <P1 className="font-bold bg-transparent">BYS Labs</P1>
       </div>
-      <div className="flex gap-12 items-center justify-center  w-full">
+      <div className="flex flex-col sm:flex-row gap-1 sm:gap-12 items-center justify-center  w-full">
         <P4 className="">Dashboard</P4>
         <P4 className="">Learn</P4>
         <P4 className="">About</P4>
