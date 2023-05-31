@@ -22,7 +22,10 @@ export default function Home() {
           loop
           muted
         >
-          <source src={translateSrc("video/blue.mp4")} type="video/mp4" />
+          <source
+            src={translateSrc("video/heroBackground.mp4")}
+            type="video/mp4"
+          />
         </video>
         <div className="relative w-full h-screen text-center pb-[5vh] mx-[5%] flex flex-col flex justify-around">
           <div className="flex justify-start">
