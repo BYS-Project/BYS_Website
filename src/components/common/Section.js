@@ -4,23 +4,38 @@ import MenuContext from "@/contexts/MenuContext";
 import ScrollContext from "@/contexts/ScrollContext";
 import { useContext, useEffect, useRef } from "react";
 
-export default function Section({ children, className, style, active }) {
+export default function Section({
+  children,
+  className,
+  top,
+  style,
+  active,
+  themes,
+}) {
   const ref = useRef(null);
-  const lastTrigger = useRef("hide");
   const { scroll } = useContext(ScrollContext);
-  const { theme, setTheme } = useContext(MenuContext);
+  const { theme, setTheme, menuHeight, setMenuHeight } =
+    useContext(MenuContext);
   useEffect(() => {
     if (active) {
       const y = ref.current.getBoundingClientRect().y;
-      if (y <= 0 && lastTrigger.current === "show") {
-        setTheme(!theme);
-        lastTrigger.current = "hide";
-      } else if (y >= 0 && lastTrigger.current === "hide") {
-        setTheme(!theme);
-        lastTrigger.current = "show";
+      if (y >= ref.current.offsetHeight * -1 && y <= menuHeight) {
+        if (top) {
+          if (y === 0) {
+            setTheme(themes[0]);
+          } else {
+            setTheme(themes[1]);
+          }
+        } else {
+          if (y <= menuHeight) {
+            themes.length > 1 && setTheme(themes[0]);
+          } else if (y >= menuHeight) {
+            themes.length > 1 && setTheme(themes[1]);
+          }
+        }
       }
     }
-  }, [active, scroll, setTheme, theme]);
+  }, [active, menuHeight, scroll, setTheme, themes, top]);
   return (
     <div ref={ref} className={className} style={style}>
       {children}

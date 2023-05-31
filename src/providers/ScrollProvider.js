@@ -11,14 +11,22 @@ export default function ScrollProvider({ children }) {
   }
   function throttle(fn, delay) {
     let timeoutId;
+    let lastArgs;
     return function (...args) {
       if (isThrottled.current) {
+        lastArgs = args;
         return;
       }
       fn(...args);
       isThrottled.current = true;
       timeoutId = setTimeout(() => {
         isThrottled.current = false;
+        if (lastArgs) {
+          fn(...lastArgs);
+          lastArgs = null;
+          clearTimeout(timeoutId);
+          timeoutId = null;
+        }
       }, delay);
     };
   }

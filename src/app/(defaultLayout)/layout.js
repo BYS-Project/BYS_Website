@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${font.className} text-greyBackground bg-black`}>
+      <body className={`${font.className} text-grey bg-black`}>
         <ScrollProvider>
           <MenuProvider>
             <HomepageMenu />
