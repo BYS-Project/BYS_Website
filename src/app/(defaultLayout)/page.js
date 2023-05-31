@@ -68,7 +68,7 @@ export default function Home() {
               <Mask />
             </div>
             <div className="relative h-full flex flex-col justify-around gap-10">
-              <div className="relative grid gap-10 ml-[5%] max-w-[95%] sm:max-w-[70%]">
+              <div className="relative flex flex-col items-center sm:items-start text-center sm:text-left gap-10 ml-[5%] max-w-[95%] sm:max-w-[70%]">
                 <H8 className="font-extrabold">What&apos;s SOULution?</H8>
                 <P1>
                   SOULution is our digital tool designed to simplify{" "}
@@ -146,7 +146,7 @@ export default function Home() {
         <Section
           themes={["blue", "grey"]}
           active
-          className="relative flex flex-col gap-5 bg-blue w-full min-h-screen rounded-t-3xl text-grey py-2"
+          className="relative flex flex-col py-4 gap-5 bg-blue w-full min-h-screen rounded-t-3xl text-grey"
         >
           <div className="flex flex-wrap sm:grid sm:grid-cols-2 h-max w-full min-h-screen">
             <div className="flex flex-col gap-10 sm:pt-20 px-[5%] sm:pr-[10%] text-center sm:text-left sm:col-start-2">
@@ -209,7 +209,7 @@ export default function Home() {
               Stop looking for the promised land. <br />
               Build it with your own hands.
             </H8>
-            <div className="flex flex-col justify-center items-center gap-10 rounded-3xl bg-grey mx-[10%] p-10 text-center">
+            <div className="flex flex-col justify-center items-center gap-10 rounded-3xl bg-grey mx-[2.5%] sm:mx-[10%] px-2 py-10 sm:p-10 text-center">
               <H5 className="font-extrabold text-lightBlue">Collab?</H5>
               <P1 className="text-blue">
                 Are you a founder, creator, or member of a Web3 community?
