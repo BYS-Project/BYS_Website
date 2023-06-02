@@ -37,7 +37,7 @@ export function HomepageMenu() {
         <Link href="/sto">
           <P4>STO</P4>
         </Link>
-        <Link target="_blank" href="https://github.com">
+        <Link target="_blank" href="https://bys-project.github.io/mvp/">
           <P4>MVP</P4>
         </Link>
         <Link target="_blank" href="https://gitbook.com">

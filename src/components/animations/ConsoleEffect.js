@@ -55,7 +55,15 @@ export default function ConsoleEffect({
         }, data.current.delay);
       }
     }, timeout);
-  }, [additionalChar, duration, index, phrases, timeoutBetween, word]);
+  }, [
+    additionalChar,
+    defaultPhrase,
+    duration,
+    index,
+    phrases,
+    timeoutBetween,
+    word,
+  ]);
   return (
     <div className="relative">
       <div className="invisible">{phrases[index] + additionalChar}</div>
