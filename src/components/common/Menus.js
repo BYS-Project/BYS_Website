@@ -3,6 +3,9 @@
 import { useCallback, useContext, useEffect, useRef } from "react";
 import { P1, P4 } from "../text/Paragraphs";
 import MenuContext from "@/contexts/MenuContext";
+import Link from "next/link";
+
+// This won't be client side. Timer sent to frontend as well as other data. Maybe ISR
 
 export function HomepageMenu() {
   const ref = useRef(null);
@@ -27,13 +30,22 @@ export function HomepageMenu() {
           : "text-grey bg-transparent"
       } fixed z-10 top-0 left-0 py-1 sm:py-4 px-2 sm:px-8 grid grid-cols-3 gap-8 w-full transition-all duration-150 ease-out text-center`}
     >
-      <div className="flex items-center justify-start gap-4">
+      <Link href="/" className="flex items-center justify-start gap-4">
         <P1 className="font-bold bg-transparent">BYS Labs</P1>
-      </div>
+      </Link>
       <div className="flex flex-col sm:flex-row gap-1 sm:gap-12 items-center justify-center  w-full">
-        <P4 className="">Dashboard</P4>
-        <P4 className="">Learn</P4>
-        <P4 className="">About</P4>
+        <Link href="/sto">
+          <P4>STO</P4>
+        </Link>
+        <Link target="_blank" href="https://github.com">
+          <P4>MVP</P4>
+        </Link>
+        <Link target="_blank" href="https://gitbook.com">
+          <P4>Learn</P4>
+        </Link>
+        <Link href="/about">
+          <P4>About</P4>
+        </Link>
       </div>
       <div className="flex items-center justify-end">
         <P4

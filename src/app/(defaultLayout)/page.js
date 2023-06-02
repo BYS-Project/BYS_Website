@@ -1,6 +1,7 @@
 "use client";
 
 import { translateSrc } from "@/commonFrontend";
+import ConsoleEffect from "@/components/animations/ConsoleEffect";
 import Section from "@/components/common/Section";
 import Separator from "@/components/specific/index/Separator";
 import { Arrow, Circle, Mask } from "@/components/svg/UI";
@@ -29,10 +30,24 @@ export default function Home() {
           />
         </video>
         <div className="relative w-full h-screen text-center pb-[5vh] mx-[5%] flex flex-col flex justify-around">
-          <div className="flex justify-start">
-            <H4 className="font-extrabold">
-              Empowering communities around the world
+          <div className="flex justify-start flex-col">
+            <H4 className={"font-extrabold"}>
+              <ConsoleEffect
+                defaultPhrase="Empowering "
+                phrases={[
+                  "communities",
+                  "creators",
+                  "artists",
+                  "collectives",
+                  "projects",
+                  "businesses",
+                ]}
+                duration={2250}
+                timeoutBetween={1500}
+                additionalChar={"_"}
+              />
             </H4>
+            <H4 className="font-extrabold">around the world</H4>
           </div>
           <div className="flex justify-center">
             <P1>
