@@ -57,8 +57,16 @@ export default function Home() {
           </div>
           <div className="flex flex-col justify-end">
             <P1>Explore SOULution</P1>
-            <div className="w-full flex justify-center opacity-[0] sm:opacity-[1] transition-all duration-[500ms] ease-in">
-              <div className="w-12 aspect-square -rotate-90">
+            <div className="w-full flex justify-center hidden sm:flex opacity-[0] sm:opacity-[1] transition-all duration-[500ms] ease-in">
+              <div
+                onClick={() =>
+                  window.scrollTo({
+                    top: document.querySelector("#firstSection").offsetTop,
+                    behavior: "smooth",
+                  })
+                }
+                className="w-12 aspect-square -rotate-90 cursor-pointer"
+              >
                 <Arrow fill="#E4E4E4" />
               </div>
             </div>
@@ -68,6 +76,7 @@ export default function Home() {
       <div
         className="bg-blue overflow-hidden"
         style={{ textShadow: "1px 1px 1px white" }}
+        id="firstSection"
       >
         <Section
           themes={["grey", "blue"]}

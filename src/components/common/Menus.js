@@ -87,7 +87,9 @@ export function HomepageMenu() {
       </div>
       <div
         className={`absolute w-[50vw] h-screen top-0 left-0 ${
-          hamburger ? "translate-x-[50vw]" : "translate-x-[100vw]"
+          hamburger
+            ? "translate-x-[50vw] visible"
+            : "translate-x-[100vw] invisible"
         } bg-grey transition-all duration-[500ms] ease-in border-l-4 border-solid border-black`}
       >
         <div className="w-full h-full flex flex-col justify-center items-center text-blue font-extrabold gap-5">
