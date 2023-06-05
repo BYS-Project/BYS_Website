@@ -4,9 +4,11 @@ import { translateSrc } from "@/commonFrontend";
 import ConsoleEffect from "@/components/animations/ConsoleEffect";
 import Section from "@/components/common/Section";
 import Separator from "@/components/specific/index/Separator";
+import { IntellectualProperty } from "@/components/svg/Home";
 import { Arrow, Circle, Mask } from "@/components/svg/UI";
 import { H2, H3, H4, H5, H8 } from "@/components/text/Headers";
 import { P1, P2, P4 } from "@/components/text/Paragraphs";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -15,7 +17,7 @@ export default function Home() {
         top
         active
         themes={["transparent", "blue"]}
-        className="relative pt-[10vh] flex gap-8 items-center justify-center w-full h-full min-h-screen bg-blue"
+        className="relative flex gap-8 items-center justify-center w-full h-full min-h-screen bg-blue"
         style={{ textShadow: "1px 1px 1px white" }}
       >
         <video
@@ -29,7 +31,7 @@ export default function Home() {
             type="video/mp4"
           />
         </video>
-        <div className="relative w-full h-screen text-center pb-[5vh] mx-[5%] flex flex-col flex justify-around">
+        <div className="relative pt-[30vh] w-full h-screen text-center mx-[5%] flex justify-around flex-col">
           <div className="flex justify-start flex-col">
             <H4 className={"font-extrabold"}>
               <ConsoleEffect
@@ -42,21 +44,21 @@ export default function Home() {
                   "projects",
                   "businesses",
                 ]}
-                duration={2250}
-                timeoutBetween={1500}
+                duration={1500}
+                timeoutBetween={1000}
                 additionalChar={"_"}
               />
             </H4>
             <H4 className="font-extrabold">around the world</H4>
           </div>
           <div className="flex justify-center">
-            <P1>
+            <P2 className="max-w-[90%] sm:max-w-[50%]">
               Unleash your potential in the world of Web3. Leave the
               spectator&apos;s seat behind and step onto the field.
-            </P1>
+            </P2>
           </div>
           <div className="flex flex-col justify-end">
-            <P1>Explore SOULution</P1>
+            <P2>Explore SOULution</P2>
             <div className="w-full flex justify-center hidden sm:flex opacity-[0] sm:opacity-[1] transition-all duration-[500ms] ease-in">
               <div
                 onClick={() =>
@@ -84,15 +86,11 @@ export default function Home() {
           className="relative py-4 flex flex-col gap-5 bg-grey w-full min-h-screen rounded-t-xl text-blue "
         >
           <div className="relative min-h-screen flex flex-col justify-center">
-            <div className="absolute w-72 aspect-square bottom-0 left-0 translate-y-1/2 -translate-x-1/2">
-              <Circle />
-              <div className="absolute top-[50%] -rotate-[35deg] w-full h-0.5 bg-grey" />
+            <div className="absolute w-[35rem] aspect-square top-0 right-0 -translate-y-1/2 translate-x-1/2">
+              <Image src="/images/home01.png" fill alt="img" />
             </div>
-            <div className="absolute w-[25rem] aspect-square bottom-0 right-0 -translate-y-1/2 translate-x-1/2">
-              <Mask />
-            </div>
-            <div className="relative h-full flex flex-col justify-around gap-10">
-              <div className="relative flex flex-col items-center sm:items-start text-center sm:text-left gap-10 ml-[5%] max-w-[95%] sm:max-w-[70%]">
+            <div className="h-full flex flex-col justify-around gap-10">
+              <div className="px-[5%] flex flex-col items-center sm:items-start text-center sm:text-left gap-10 ml-[5%] max-w-[95%] sm:max-w-[70%]">
                 <H8 className="font-extrabold">What&apos;s SOULution?</H8>
                 <P1>
                   SOULution is our digital tool designed to simplify{" "}
@@ -108,10 +106,12 @@ export default function Home() {
                   <P1>Read Docs</P1>
                 </div>
               </div>
-              <P1 className="uppercase text-center mx-[5%]">
-                Because a great founder is nothing without the support of a
-                great community.
-              </P1>
+              <div className="absolute bottom-0 left-0 text-grey w-full py-10 text-center uppercase translate-y-[50%] bg-blue">
+                <P1 className="my-auto left-0 animate-scrolling-text w-max">
+                  Because a great founder is nothing without the support of a
+                  great community.
+                </P1>
+              </div>
             </div>
           </div>
           <div className="relative min-h-screen flex flex-col justify-center">
@@ -136,7 +136,13 @@ export default function Home() {
                 </P2>
               </div>
               <div className="relative max-w-[30rem] flex flex-col items-center justify-center">
-                <div>Img</div>
+                <div>
+                  <IntellectualProperty
+                    fill={"black"}
+                    width="100%"
+                    height="100%"
+                  />
+                </div>
                 <P1 className="font-extrabold">IP & Licensing</P1>
                 <P2>
                   Foster collective IP development. Manage licenses and
@@ -173,7 +179,7 @@ export default function Home() {
           className="relative flex flex-col py-4 gap-5 bg-blue w-full min-h-screen rounded-t-3xl text-grey"
         >
           <div className="flex flex-wrap sm:grid sm:grid-cols-2 h-max w-full min-h-screen">
-            <div className="flex flex-col gap-10 sm:pt-20 px-[5%] sm:pr-[10%] text-center sm:text-left sm:col-start-2">
+            <div className="flex flex-col gap-10 sm:pt-20 px-[5%] text-center sm:text-left sm:col-start-2">
               <H8 className={"font-extrabold"}>Tailored to your Community.</H8>
               <P1>
                 Customize every aspect of your community experience with
@@ -226,22 +232,22 @@ export default function Home() {
         <Section
           themes={["grey", "blue"]}
           active
-          className="relative flex flex-col items-center justify-center gap-5 bg-lightBlue w-full h-full min-h-screen rounded-t-3xl text-grey "
+          className="relative flex flex-col items-center justify-center gap-5 bg-grey w-full h-full min-h-screen rounded-t-3xl text-blue "
         >
           <div className="w-full h-full flex flex-col items-center justify-center gap-10 text-center">
             <H8 className={"uppercase font-extrabold mx-[5%]"}>
               Stop looking for the promised land. <br />
               Build it with your own hands.
             </H8>
-            <div className="flex flex-col justify-center items-center gap-10 rounded-3xl bg-grey mx-[2.5%] sm:mx-[10%] px-2 py-10 sm:p-10 text-center">
-              <H5 className="font-extrabold text-lightBlue">Collab?</H5>
-              <P1 className="text-blue">
+            <div className="flex flex-col justify-center items-center gap-10 rounded-3xl bg-blue mx-[2.5%] sm:mx-[10%] px-2 py-10 sm:p-10 text-center">
+              <H5 className="font-extrabold text-grey">Collab?</H5>
+              <P1 className="text-grey">
                 Are you a founder, creator, or member of a Web3 community?
                 <br />
                 Please don&apos;t hesitate to contact us, even just to chat.
               </P1>
               <P4
-                className={`w-max text-grey bg-blue rounded-full px-4 py-2 font-bold transition-all duration-150 ease-out`}
+                className={`w-max text-blue bg-grey rounded-full px-4 py-2 font-bold transition-all duration-150 ease-out`}
               >
                 Contact us
               </P4>

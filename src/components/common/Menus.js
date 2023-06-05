@@ -29,7 +29,7 @@ export function HomepageMenu() {
           : theme === "blue"
           ? "text-blue bg-grey"
           : "text-grey bg-transparent"
-      } fixed z-10 top-0 left-0 py-1 sm:py-4 px-2 sm:px-8 grid grid-cols-3 gap-8 w-full transition-all duration-150 ease-out text-center`}
+      } fixed z-10 top-0 left-0 py-1 sm:py-4 px-[5%] sm:px-[5%] grid grid-cols-3 gap-8 w-full transition-all duration-150 ease-out text-center`}
     >
       <Link href="./" className="flex items-center justify-start gap-4">
         <P1 className="font-bold bg-transparent">BYS Labs</P1>

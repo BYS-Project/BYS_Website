@@ -37,7 +37,7 @@ export default function Section({
     }
   }, [active, menuHeight, scroll, setTheme, themes, top]);
   return (
-    <div ref={ref} className={className} style={style}>
+    <div ref={ref} className={`${className}`} style={style}>
       {children}
     </div>
   );
