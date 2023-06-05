@@ -6,7 +6,7 @@ import Section from "@/components/common/Section";
 import Separator from "@/components/specific/index/Separator";
 import { IntellectualProperty } from "@/components/svg/Home";
 import { Arrow, Circle, Mask } from "@/components/svg/UI";
-import { H2, H3, H4, H5, H8 } from "@/components/text/Headers";
+import { H2, H3, H4, H5, H6, H8 } from "@/components/text/Headers";
 import { P1, P2, P4 } from "@/components/text/Paragraphs";
 import Image from "next/image";
 
@@ -33,7 +33,7 @@ export default function Home() {
         </video>
         <div className="relative pt-[30vh] w-full h-screen text-center mx-[5%] flex justify-around flex-col">
           <div className="flex justify-start flex-col">
-            <H4 className={"font-extrabold"}>
+            <H6 className={"font-extrabold"}>
               <ConsoleEffect
                 defaultPhrase="Empowering "
                 phrases={[
@@ -48,8 +48,8 @@ export default function Home() {
                 timeoutBetween={1000}
                 additionalChar={"_"}
               />
-            </H4>
-            <H4 className="font-extrabold">around the world</H4>
+            </H6>
+            <H6 className="font-extrabold">around the world</H6>
           </div>
           <div className="flex justify-center">
             <P2 className="max-w-[90%] sm:max-w-[50%]">
@@ -86,32 +86,36 @@ export default function Home() {
           className="relative py-4 flex flex-col gap-5 bg-grey w-full min-h-screen rounded-t-xl text-blue "
         >
           <div className="relative min-h-screen flex flex-col justify-center">
-            <div className="absolute w-[35rem] aspect-square top-0 right-0 -translate-y-1/2 translate-x-1/2">
-              <Image src="/images/home01.png" fill alt="img" />
-            </div>
-            <div className="h-full flex flex-col justify-around gap-10">
-              <div className="px-[5%] flex flex-col items-center sm:items-start text-center sm:text-left gap-10 ml-[5%] max-w-[95%] sm:max-w-[70%]">
-                <H8 className="font-extrabold">What&apos;s SOULution?</H8>
-                <P1>
-                  SOULution is our digital tool designed to simplify{" "}
-                  <span className="font-bold">community management</span> and{" "}
-                  <span className="font-bold">expansion</span>.
-                  <br />
-                  The platform provides everything you need to onboard members
-                  and grow through{" "}
-                  <span className="font-bold">storytelling</span> and{" "}
-                  <span className="font-bold">gamification</span>.
-                </P1>
-                <div className="w-max py-2 px-6 bg-blue rounded-full text-white">
-                  <P1>Read Docs</P1>
+            <div className="grid grid-cols-2">
+              <div className="h-full flex flex-col justify-around gap-10">
+                <div className="pl-[10%] flex flex-col items-center sm:items-start text-center sm:text-left gap-10 ml-[5%] max-w-[95%] sm:max-w-[90%]">
+                  <H8 className="font-extrabold">What&apos;s SOULution?</H8>
+                  <P2 className="">
+                    SOULution is our digital tool designed to simplify{" "}
+                    <span className="font-bold">community management</span> and{" "}
+                    <span className="font-bold">expansion</span>.
+                    <br />
+                    The platform provides everything you need to onboard members
+                    and grow through{" "}
+                    <span className="font-bold">storytelling</span> and{" "}
+                    <span className="font-bold">gamification</span>.
+                  </P2>
+                  <div className="w-max py-2 px-6 bg-blue rounded-full text-white">
+                    <P2>Read Docs</P2>
+                  </div>
                 </div>
               </div>
-              <div className="absolute bottom-0 left-0 text-grey w-full py-10 text-center uppercase translate-y-[50%] bg-blue">
-                <P1 className="my-auto left-0 animate-scrolling-text w-max">
-                  Because a great founder is nothing without the support of a
-                  great community.
-                </P1>
+              <div className="flex items-center justify-center h-full w-full">
+                <div className="relative w-[20rem] aspect-square">
+                  <Image src="/images/home05.png" fill alt="img" />
+                </div>
               </div>
+            </div>
+            <div className="absolute bottom-0 left-0 text-grey w-full py-10 text-center uppercase translate-y-[50%] bg-blue">
+              <P1 className="my-auto left-0 animate-scrolling-text w-max">
+                Because a great founder is nothing without the support of a
+                great community.
+              </P1>
             </div>
           </div>
           <div className="relative min-h-screen flex flex-col justify-center">
