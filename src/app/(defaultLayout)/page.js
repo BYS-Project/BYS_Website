@@ -4,13 +4,90 @@ import { translateSrc } from "@/commonFrontend";
 import ConsoleEffect from "@/components/animations/ConsoleEffect";
 import Section from "@/components/common/Section";
 import Separator from "@/components/specific/index/Separator";
-import { IntellectualProperty } from "@/components/svg/Home";
+import {
+  Dao,
+  IntellectualProperty,
+  Leaderboard,
+  QuestsGamify,
+  RevenueShare,
+} from "@/components/svg/Home";
 import { Arrow, Circle, Mask } from "@/components/svg/UI";
 import { H2, H3, H4, H5, H6, H8 } from "@/components/text/Headers";
 import { P1, P2, P4 } from "@/components/text/Paragraphs";
 import Image from "next/image";
+import { cloneElement, useRef, useState } from "react";
+
+function Card({ selected, setSelected, i, children }) {
+  return (
+    <div
+      className={`w-[12.5rem] bg-lightBlue ${
+        selected === i ? "bg-gradient-to-tr from-blue to-lightBlue" : ""
+      } border-4 border-solid border-black px-10 py-5 rounded-3xl transition-all duration-150 ease-in`}
+      onClick={() => setSelected(i)}
+    >
+      {cloneElement(children, {
+        fill: "white",
+        width: "100%",
+        height: "100%",
+      })}
+    </div>
+  );
+}
 
 export default function Home() {
+  const ELEMENTS = useRef([
+    <div
+      key={0}
+      className="relative max-w-[30rem] flex flex-col items-center justify-center"
+    >
+      <P1 className="font-extrabold">Revenue Share</P1>
+      <P2>
+        Earn together, grow together. Reward your community&apos;s efforts and
+        share the success.
+      </P2>
+    </div>,
+    <div
+      key={1}
+      className="relative max-w-[30rem] flex flex-col items-center justify-center"
+    >
+      <P1 className="font-extrabold">Leaderboard</P1>
+      <P2>
+        Fuel healthy competition and recognize top contributors with our dynamic
+        leaderboard.
+      </P2>
+    </div>,
+    <div
+      key={2}
+      className="relative max-w-[30rem] flex flex-col items-center justify-center"
+    >
+      <P1 className="font-extrabold">IP & Licensing</P1>
+      <P2>
+        Foster collective IP development. Manage licenses and cultivate a
+        thriving creative ecosystem.
+      </P2>
+    </div>,
+    <div
+      key={3}
+      className="relative max-w-[30rem] flex flex-col items-center justify-center"
+    >
+      <P1 className="font-extrabold">DAO</P1>
+      <P2>
+        Empower your community with decentralized decision-making and
+        governance.
+      </P2>
+    </div>,
+    <div
+      key={4}
+      className="relative max-w-[30rem] flex flex-col items-center justify-center"
+    >
+      <P1 className="font-extrabold">Quests & Game-fi</P1>
+      <P2>
+        Bring your community into action with exciting quests, challenges, and
+        missions.
+      </P2>
+    </div>,
+  ]);
+  const [selected, setSelected] = useState(null);
   return (
     <div className="relative w-full h-full">
       <Section
@@ -33,7 +110,7 @@ export default function Home() {
         </video>
         <div className="relative pt-[30vh] w-full h-screen text-center mx-[5%] flex justify-around flex-col">
           <div className="flex justify-start flex-col">
-            <H6 className={"font-extrabold"}>
+            <H5 className={"font-extrabold"}>
               <ConsoleEffect
                 defaultPhrase="Empowering "
                 phrases={[
@@ -48,8 +125,8 @@ export default function Home() {
                 timeoutBetween={1000}
                 additionalChar={"_"}
               />
-            </H6>
-            <H6 className="font-extrabold">around the world</H6>
+            </H5>
+            <H5 className="font-extrabold">around the world</H5>
           </div>
           <div className="flex justify-center">
             <P2 className="max-w-[90%] sm:max-w-[50%]">
@@ -106,8 +183,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex items-center justify-center h-full w-full">
-                <div className="relative w-[20rem] aspect-square">
-                  <Image src="/images/home05.png" fill alt="img" />
+                <div className="relative w-[20rem] aspect-[0.67/1]">
+                  <Image src="/images/home06.png" fill alt="img" />
                 </div>
               </div>
             </div>
@@ -122,52 +199,30 @@ export default function Home() {
             <div className="absolute w-72 aspect-square bottom-0 right-0 translate-y-1/2 translate-x-1/2">
               <Circle />
             </div>
-            <div className="flex flex-wrap justify-center gap-10 text-center">
-              <div className="relative max-w-[30rem] flex flex-col items-center justify-center">
-                <div>Img</div>
-                <P1 className="font-extrabold">Revenue Share</P1>
-                <P2>
-                  Earn together, grow together. Reward your community&apos;s
-                  efforts and share the success.
-                </P2>
+            <div className="grid grid-cols-2 mx-[10%]">
+              <div className="flex flex-wrap items-center justify-end  gap-8">
+                <Card selected={selected} setSelected={setSelected} i={0}>
+                  <RevenueShare />
+                </Card>
+                <Card selected={selected} setSelected={setSelected} i={1}>
+                  <Leaderboard />
+                </Card>
+                <Card selected={selected} setSelected={setSelected} i={2}>
+                  <IntellectualProperty />
+                </Card>
+                <Card selected={selected} setSelected={setSelected} i={3}>
+                  <Dao />
+                </Card>
+                <Card selected={selected} setSelected={setSelected} i={4}>
+                  <QuestsGamify />
+                </Card>
               </div>
-              <div className="relative max-w-[30rem] flex flex-col items-center justify-center">
-                <div>Img</div>
-                <P1 className="font-extrabold">Leaderboard</P1>
-                <P2>
-                  Fuel healthy competition and recognize top contributors with
-                  our dynamic leaderboard.
-                </P2>
-              </div>
-              <div className="relative max-w-[30rem] flex flex-col items-center justify-center">
-                <div>
-                  <IntellectualProperty
-                    fill={"black"}
-                    width="100%"
-                    height="100%"
-                  />
-                </div>
-                <P1 className="font-extrabold">IP & Licensing</P1>
-                <P2>
-                  Foster collective IP development. Manage licenses and
-                  cultivate a thriving creative ecosystem.
-                </P2>
-              </div>
-              <div className="relative max-w-[30rem] flex flex-col items-center justify-center">
-                <div>Img</div>
-                <P1 className="font-extrabold">DAO</P1>
-                <P2>
-                  Empower your community with decentralized decision-making and
-                  governance.
-                </P2>
-              </div>
-              <div className="relative max-w-[30rem] flex flex-col items-center justify-center">
-                <div>Img</div>
-                <P1 className="font-extrabold">Quests & Game-fi</P1>
-                <P2>
-                  Bring your community into action with exciting quests,
-                  challenges, and missions.
-                </P2>
+              <div className="flex items-center justify-center">
+                {selected !== null && (
+                  <div key={selected} className="animate-fadeFromRight">
+                    {ELEMENTS.current[selected]}
+                  </div>
+                )}
               </div>
             </div>
           </div>
